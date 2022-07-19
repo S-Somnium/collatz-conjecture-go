@@ -26,11 +26,11 @@ func readMessages(connection net.Conn) {
 		fmt.Print("Received message:", input)
 		number, err := getNumbersFromInput(input)
 		if err != nil {
-			connection.Write([]byte("\n Argument is not valid! Expected int64" + "\n"))
+			connection.Write([]byte("\nArgument is not valid! Expected int\n"))
 			fmt.Println(err)
 		} else {
 			steps := algorithms.CollatzStepsCalc(int(number))
-			connection.Write([]byte("\n The number of steps is: " + strconv.Itoa(steps) + "\n"))
+			connection.Write([]byte(strconv.Itoa(steps)))
 		}
 	}
 }
@@ -45,7 +45,6 @@ func startService(port string) {
 		newConnection, err := service.Accept()
 		if err != nil {
 			fmt.Println(err)
-			os.Exit(3)
 		}
 		go readMessages(newConnection)
 	}

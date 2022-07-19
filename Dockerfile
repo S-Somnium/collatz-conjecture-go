@@ -1,6 +1,7 @@
 FROM golang:latest
 RUN mkdir /build
+COPY . /build
 WORKDIR /build
-
-RUN export GO111MODULE=on
-RUN cd /build && git clone 
+RUN go build ./main.go
+EXPOSE 8081
+ENTRYPOINT [ "/build/main" ]
