@@ -1,8 +1,8 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: collatz_service
+  name: collatz-service
 spec:
   containers: 
-  - name: collatz_service
-    image: collatz_service:latest
+  - name: collatz-service
+    image: collatz-service:latest
