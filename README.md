@@ -14,7 +14,7 @@ Create minikube pod
  ```sh
 kubectl create -f ./collatz_service.yaml
 ```
-Attach port 5000 to 8081 of container
+Attach port 5000 to 8081 port of container
  ```sh
 kubectl port-forward collatz_service 5000:8081
 ```
