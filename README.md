@@ -6,7 +6,7 @@ Clone the project
  ```sh
 git clone https://github.com/S-Somnium/collatz-conjecture-go
 ```
-Now go inside the project folter and run create docker image
+Now go inside the project folter and create docker image
  ```sh
 docker build -t collatz_service .
 ```
